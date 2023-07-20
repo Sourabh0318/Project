@@ -1,4 +1,6 @@
+import sys
 from pytube import YouTube
+
 
 def downlaodAudio(url):
     yt = YouTube(url)
@@ -6,11 +8,13 @@ def downlaodAudio(url):
     audio = yt.streams.get_audio_only()
     audio.download()
 
+
 def downloadVideo(url):
     yt = YouTube(url)
     print(yt.title)
     video = yt.streams.filter(resolution='720p', file_extension='mp4').first()
     video.download()
+
 
 while True:
     print("Press '1' to download only audio")
