@@ -12,7 +12,7 @@ def downlaodAudio(url):
 def downloadVideo(url):
     yt = YouTube(url)
     print(yt.title)
-    video = yt.streams.filter(only_video=True).first()
+    video = yt.streams.filter(resolution="720p", file_extension='mp4').first()
     video.download()
 
 
