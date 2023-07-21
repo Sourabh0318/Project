@@ -12,7 +12,7 @@ def downlaodAudio(url):
 def downloadVideo(url):
     yt = YouTube(url)
     print(yt.title)
-    video = yt.streams.filter(resolution="720p", file_extension='mp4').first()
+    video = yt.streams.filter(resolution='720p', file_extension='mp4').first()
     video.download()
 
 
@@ -21,10 +21,11 @@ while True:
     print("Press '2' to download video")
     print("Press '0' to exit")
     choice = input("Enter your choice: ")
-    link = input("Enter youtube url: ")
     if choice == '1':
+        link = input("Enter youtube url: ")
         downlaodAudio(link)
     elif choice == '2':
+        link = input("Enter youtube url: ")
         downloadVideo(link)
     elif choice == '0':
         break
